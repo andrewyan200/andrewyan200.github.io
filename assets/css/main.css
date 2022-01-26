@@ -350,6 +350,7 @@ input, select, textarea {
   height: 90px;
   line-height: 90px;
   overflow: hidden;
+	margin-bottom: -2px;
 }
 .dynamic-txts li{
   list-style: none;
