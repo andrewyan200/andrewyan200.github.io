@@ -186,3 +186,17 @@ function animatePath(pathname, animation) {
 	// Go!
 	path.style.strokeDashoffset = '0';
 }
+
+// Signature
+
+// Wait for the page to load
+window.addEventListener("load", () => {
+	animateSignature();
+  });
+  
+function animateSignature() {
+	// Reset animation
+	textElement.style.animation = "none";
+	textElement.offsetHeight; // Trigger reflow to restart the animation
+	textElement.style.animation = null;
+}

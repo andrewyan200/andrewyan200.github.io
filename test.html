@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #signature {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: draw 5s linear forwards;
+        }
+
+        #signature1 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 2500;
+            animation: draw1 5s linear forwards;
+        }
+
+        #signature2 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 100;
+            animation: draw2 5s linear forwards;
+        }
+
+        #signature3 {
+            fill: none;
+            stroke: black;
+            stroke-dasharray: 1500;
+            animation: draw3 5s linear forwards;
+        }
+
+        @keyframes draw1 {
+            0% {
+                stroke-dashoffset: 2500;
+            }
+
+            40% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes draw2 {
+            40% {
+                stroke-dashoffset: 80;
+            }
+
+            45% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes draw3 {
+            45% {
+                stroke-dashoffset: 1000;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* .signature_path {
+            opacity: 0;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+
+            
+        }
+        .animated {
+                opacity: 1;
+                animation-name: line;
+            }
+
+        @keyframes line {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <svg id="signature1" width="227" height="135" viewBox="0 0 227 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M164.945 28C164.945 28 185.5 20 191 8.50001C193 -0.99999 175.055 1 160 2.5C137.113 4.78025 110 17.5 102 21C94.4452 24.3052 44.9447 59 29.9447 74C14.9447 89 5.94466 95.2569 1.94466 111.257C-2.05534 126.457 7.61133 132.924 12.9447 134.257C12.9447 134.257 19 133.5 29.9447 127.257C46.7375 117.678 111.945 67.9235 141.945 43.2569C114.945 62.5902 62.7447 103.257 69.9447 111.257C77.1447 119.257 136.278 105.257 164.945 97.2569C183.945 90.5902 222.745 78.4569 225.945 83.2569"
+            stroke="black" />
+    </svg>
+
+    <svg id="signature2" width="10" height="6" viewBox="0 0 2 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 6V0" stroke="black" />
+    </svg>
+
+    <svg id="signature3" width="406" height="151" viewBox="0 0 406 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M40 82C199 -38 120.731 39.6762 106 63C94 82 166.859 33.6419 183 25.2317C216 8.03673 218.326 -8.96326 209.326 8.03674C202.126 21.6367 177.659 45.0368 166.326 55.0368C114.659 89.3701 9.32577 156.237 1.32577 149.037C-6.67423 141.837 134.659 80.0368 206.326 50.0368C238.326 32.4368 162.326 80.0368 120.326 106.037C125.992 105.37 141.126 101.637 156.326 92.0368C175.326 80.0368 226.326 43.0368 227.326 55.0368C228.326 67.0368 203.326 65.0368 209.326 74.0368C215.326 83.0368 371.257 21.0811 376 19.5C382 17.5 396.659 12.0367 405.326 8.03674"
+            stroke="black" />
+    </svg>
+
+
+    <svg id="signature" width="500" height="200">
+
+        <path class="example" fill="none" stroke="#000000" stroke-width="2" d="M100,100 Q200,200 300,100"></path>
+    </svg>
+    <!-- Example is 229 long -->
+
+
+
+    <script type="text/javascript">
+        const path1 = document.getElementById("signature1")
+        var length = path1.getTotalLength()
+        console.log(length)
+        // const calcPaths = (totalDur) => {
+        //     // unset 'animated' class to body which will reset the animation
+        //     document.body.classList.add('animated')
+
+        //     // get all SVG elements - lines and dots
+        //     const paths = document.querySelectorAll('.signature_path')
+
+        //     // prepare path length variable
+        //     let len = 0
+
+        //     // prepare animation delay length variable
+        //     let delay = 0
+
+        //     // escape if no elements found
+        //     if (!paths.length) {
+        //         return false
+        //     }
+
+        //     // set duration in seconds of animation to default if not set
+        //     const totalDuration = totalDur || 7
+
+        //     // calculate the full path length
+        //     paths.forEach((path) => {
+        //         const totalLen = path.getTotalLength()
+        //         len += totalLen
+        //     })
+
+        //     paths.forEach((path) => {
+        //         const pathElem = path
+
+        //         // get current path length
+        //         const totalLen = path.getTotalLength()
+
+        //         // calculate current animation duration
+        //         const duration = totalLen / len * totalDuration
+
+        //         // set animation duration and delay
+        //         pathElem.style.animationDuration = `${duration < 0.2 ? 0.2 : duration}s`
+        //         pathElem.style.animationDelay = `${delay}s`
+
+        //         // set dash array and offset to path length - this is how you hide the line
+        //         pathElem.setAttribute('stroke-dasharray', totalLen)
+        //         pathElem.setAttribute('stroke-dashoffset', totalLen)
+
+        //         // set delay for the next path - added .2 seconds to make it more realistic
+        //         delay += duration + 0.2
+        //     })
+
+        //     // set 'animated' class to body which will start the animation
+        //     document.body.classList.add('animated')
+        //     return true
+        // }
+        // calcPaths(5)
+    </script>
+</body>
+
+</html>
