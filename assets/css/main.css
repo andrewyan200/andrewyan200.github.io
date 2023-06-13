@@ -323,6 +323,60 @@ input, select, textarea {
 	}
   }
 
+/* Advanced Signature Animation :) */
+.signature {
+	fill: none;
+	stroke: black;
+	stroke-width: 4;
+}
+
+.signature1 {
+	stroke-dasharray: 2500;
+	animation: draw1 6s linear forwards;
+}
+
+.signature2 {
+	stroke-dasharray: 100;
+	animation: draw2 6s linear forwards;
+}
+
+.signature3 {
+	stroke-dasharray: 1500;
+	animation: draw3 6s linear forwards;
+}
+
+@keyframes draw1 {
+	0% {
+		stroke-dashoffset: 2500;
+	}
+
+	45% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes draw2 {
+	0%,
+	25% {
+		stroke-dashoffset: 100;
+	}
+
+	30% {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes draw3 {
+	0%,
+	50% {
+		stroke-dashoffset: 1600;
+	}
+
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
 /* Typing Animation */
 
 .wrapper {
@@ -398,6 +452,11 @@ input, select, textarea {
   }
 }
 
+	@media screen and (min-width : 1200px) {
+		.fadeshow-mobile {
+			display: none;
+		}
+	}
 
 	@media screen and (max-width : 1200px) {
 
@@ -415,6 +474,7 @@ input, select, textarea {
 			margin-top: -20px;
 			justify-content: left;
 		}
+
 		.wrapper .static-txt{
 			color: #1f1815;
 			font-size: 25px;
@@ -464,6 +524,58 @@ input, select, textarea {
 			}
 			100%{
 				left: 0;
+			}
+		}
+
+		/* Advanced Signature Animation :) */
+		.fadeshow-desktop {
+			display: none;
+		}
+
+		.signature1 {
+			stroke-dasharray: 2500;
+			animation: draw1 6s linear forwards;
+		}
+
+		.signature2 {
+			stroke-dasharray: 100;
+			animation: draw2 6s linear forwards;
+		}
+
+		.signature3 {
+			stroke-dasharray: 1500;
+			animation: draw3 6s linear forwards;
+		}
+
+		@keyframes draw1 {
+			0% {
+				stroke-dashoffset: 2500;
+			}
+
+			45% {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		@keyframes draw2 {
+			0%,
+			25% {
+				stroke-dashoffset: 100;
+			}
+
+			30% {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		@keyframes draw3 {
+			0%,
+			50% {
+				stroke-dashoffset: 1600;
+			}
+
+			100% {
+				stroke-dashoffset: 0;
 			}
 		}
 	}
