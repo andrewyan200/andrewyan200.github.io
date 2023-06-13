@@ -169,44 +169,21 @@ function animatePath(pathname, animation) {
 // Signature
 
 // Create the observers
-const observerDesktop = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
-		const signature1 = document.querySelector(".signature1");
-		const signature2 = document.querySelector(".signature2");
-		const signature3 = document.querySelector(".signature3");
-	
-		if (entry.isIntersecting) {
-			signature1.classList.add('signature1-animation');
-			signature2.classList.add('signature2-animation');
-			signature3.classList.add('signature3-animation');
-		  	return; // if we added the class, exit the function
+		// Iterates for signatures 1-3 inclusive
+		for (let i = 1; i < 4; i++) {
+			const signature = document.querySelector(".signature"+String(i));
+			if (entry.isIntersecting) {
+				signature.classList.add("signature"+String(i)+"-animation");
+			}
+			else {
+				// We're not intersecting, so remove the class!
+				signature.classList.remove("signature"+String(i)+"-animation");
+			}
 		}
-		// We're not intersecting, so remove the class!
-		signature1.classList.remove('signature1-animation');
-		signature2.classList.remove('signature2-animation');
-		signature3.classList.remove('signature3-animation');
 	  });
 });
 
 // Tell the observer which elements to track
-observerDesktop.observe(document.querySelector(".fadeshow-desktop"));
-
-const observerMobile = new IntersectionObserver(entries => {
-	entries.forEach(entry => {
-		const signature1 = document.querySelector(".signature1.fadeshow-mobile");
-		const signature2 = document.querySelector(".signature2.fadeshow-mobile");
-		const signature3 = document.querySelector(".signature3.fadeshow-mobile");
-	
-		if (entry.isIntersecting) {
-			signature1.classList.add('signature1-animation');
-			signature2.classList.add('signature2-animation');
-			signature3.classList.add('signature3-animation');
-		  	return; // if we added the class, exit the function
-		}
-		// We're not intersecting, so remove the class!
-		signature1.classList.remove('signature1-animation');
-		signature2.classList.remove('signature2-animation');
-		signature3.classList.remove('signature3-animation');
-	  });
-});
-observerMobile.observe(document.querySelector(".fadeshow-mobile"));
+observer.observe(document.querySelector(".signature"));

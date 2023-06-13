@@ -348,25 +348,25 @@ input, select, textarea {
 		stroke-dashoffset: 2500;
 	}
 
-	45% {
+	50% {
 		stroke-dashoffset: 0;
 	}
 }
 
 @keyframes draw2 {
 	0%,
-	25% {
+	30% {
 		stroke-dashoffset: 100;
 	}
 
-	30% {
+	35% {
 		stroke-dashoffset: 0;
 	}
 }
 
 @keyframes draw3 {
 	0%,
-	50% {
+	55% {
 		stroke-dashoffset: 1600;
 	}
 
@@ -450,12 +450,6 @@ input, select, textarea {
   }
 }
 
-	@media screen and (min-width : 1200px) {
-		.fadeshow-mobile {
-			display: none;
-		}
-	}
-
 	@media screen and (max-width : 1200px) {
 
 		.hello {
@@ -523,11 +517,6 @@ input, select, textarea {
 			100%{
 				left: 0;
 			}
-		}
-
-		/* Advanced Signature Animation :) */
-		.fadeshow-desktop {
-			display: none;
 		}
 	}
 
