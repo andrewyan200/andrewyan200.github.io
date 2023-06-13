@@ -291,28 +291,6 @@ input, select, textarea {
 
 		}
 
-
-/* .autograph {
-	width:100%;
-} */
-
-/* .autograph__path {
-  
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-.autograph__path .animated {
-    opacity: 1;
-    animation-name: line;
-}
-
-@keyframes line {
-  100% {
-    stroke-dashoffset: 0;
-  }
-} */
-
 /* Signature Animation */
 @keyframes fade-in {
 	0% {
@@ -330,6 +308,26 @@ input, select, textarea {
 	stroke-width: 4;
 }
 
+.signature1-animation {
+	animation-name: draw1;
+	stroke-dasharray: 2500;
+	animation: draw1 6s linear forwards;
+}
+
+.signature2-animation {
+	animation-name: draw2;
+	stroke-dasharray: 100;
+	animation: draw2 6s linear forwards;
+}
+
+.signature3-animation {
+	animation-name: draw3;
+	stroke-dasharray: 1500;
+	animation: draw3 6s linear forwards;
+}
+
+/* Legacy code for loading signature on page load, since replaced by loading signature on page scroll via IntersectionObserver API */
+/* 
 .signature1 {
 	stroke-dasharray: 2500;
 	animation: draw1 6s linear forwards;
@@ -343,7 +341,7 @@ input, select, textarea {
 .signature3 {
 	stroke-dasharray: 1500;
 	animation: draw3 6s linear forwards;
-}
+} */
 
 @keyframes draw1 {
 	0% {
@@ -530,53 +528,6 @@ input, select, textarea {
 		/* Advanced Signature Animation :) */
 		.fadeshow-desktop {
 			display: none;
-		}
-
-		.signature1 {
-			stroke-dasharray: 2500;
-			animation: draw1 6s linear forwards;
-		}
-
-		.signature2 {
-			stroke-dasharray: 100;
-			animation: draw2 6s linear forwards;
-		}
-
-		.signature3 {
-			stroke-dasharray: 1500;
-			animation: draw3 6s linear forwards;
-		}
-
-		@keyframes draw1 {
-			0% {
-				stroke-dashoffset: 2500;
-			}
-
-			45% {
-				stroke-dashoffset: 0;
-			}
-		}
-
-		@keyframes draw2 {
-			0%,
-			25% {
-				stroke-dashoffset: 100;
-			}
-
-			30% {
-				stroke-dashoffset: 0;
-			}
-		}
-
-		@keyframes draw3 {
-			0%,
-			50% {
-				stroke-dashoffset: 1600;
-			}
-
-			100% {
-				stroke-dashoffset: 0;
-			}
 		}
 	}
 

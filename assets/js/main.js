@@ -36,27 +36,6 @@
 				$body.removeClass('is-preload');
 			}, 100);
 		});
-
-		
-	
-	// Play signature animation when scrolled on
-	var target = document.querySelector('#three');
-	var reached = false;
-
-	document.addEventListener('scroll', () => {
-		if ((window.scrollY >= target.getBoundingClientRect().top) && !reached) {
-			console.log('I have been reached');
-			reached = true;
-			mySVG.drawsvg('animate');
-			setInterval(calcPaths, 9500)
-			calcPaths()
-			animatePath('#LF path', 'stroke-dashoffset 1s ease-in-out');
-			animatePath('#LF-shadow path', 'stroke-dashoffset 1s ease-in-out');
-			animatePath('#enton path', 'stroke-dashoffset 2s 1s ease-in-out');
-			animatePath('#enton-shadow path', 'stroke-dashoffset 2s 1s ease-in-out');
-		}
-	})
-	
 	
 
 	// Touch?
@@ -189,14 +168,45 @@ function animatePath(pathname, animation) {
 
 // Signature
 
-// Wait for the page to load
-window.addEventListener("load", () => {
-	animateSignature();
-  });
-  
-function animateSignature() {
-	// Reset animation
-	textElement.style.animation = "none";
-	textElement.offsetHeight; // Trigger reflow to restart the animation
-	textElement.style.animation = null;
-}
+// Create the observers
+const observerDesktop = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		const signature1 = document.querySelector(".signature1");
+		const signature2 = document.querySelector(".signature2");
+		const signature3 = document.querySelector(".signature3");
+	
+		if (entry.isIntersecting) {
+			signature1.classList.add('signature1-animation');
+			signature2.classList.add('signature2-animation');
+			signature3.classList.add('signature3-animation');
+		  	return; // if we added the class, exit the function
+		}
+		// We're not intersecting, so remove the class!
+		signature1.classList.remove('signature1-animation');
+		signature2.classList.remove('signature2-animation');
+		signature3.classList.remove('signature3-animation');
+	  });
+});
+
+// Tell the observer which elements to track
+observerDesktop.observe(document.querySelector(".fadeshow-desktop"));
+
+const observerMobile = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+		const signature1 = document.querySelector(".signature1.fadeshow-mobile");
+		const signature2 = document.querySelector(".signature2.fadeshow-mobile");
+		const signature3 = document.querySelector(".signature3.fadeshow-mobile");
+	
+		if (entry.isIntersecting) {
+			signature1.classList.add('signature1-animation');
+			signature2.classList.add('signature2-animation');
+			signature3.classList.add('signature3-animation');
+		  	return; // if we added the class, exit the function
+		}
+		// We're not intersecting, so remove the class!
+		signature1.classList.remove('signature1-animation');
+		signature2.classList.remove('signature2-animation');
+		signature3.classList.remove('signature3-animation');
+	  });
+});
+observerMobile.observe(document.querySelector(".fadeshow-mobile"));
