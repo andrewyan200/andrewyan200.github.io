@@ -311,19 +311,19 @@ input, select, textarea {
 .signature1-animation {
 	animation-name: draw1;
 	stroke-dasharray: 2500;
-	animation: draw1 6s linear forwards;
+	animation: draw1 5s linear forwards;
 }
 
 .signature2-animation {
 	animation-name: draw2;
 	stroke-dasharray: 100;
-	animation: draw2 6s linear forwards;
+	animation: draw2 5s linear forwards;
 }
 
 .signature3-animation {
 	animation-name: draw3;
 	stroke-dasharray: 1500;
-	animation: draw3 6s linear forwards;
+	animation: draw3 5s linear forwards;
 }
 
 /* Legacy code for loading signature on page load, since replaced by loading signature on page scroll via IntersectionObserver API */
@@ -366,7 +366,7 @@ input, select, textarea {
 
 @keyframes draw3 {
 	0%,
-	55% {
+	50% {
 		stroke-dashoffset: 1600;
 	}
 
