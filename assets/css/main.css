@@ -367,7 +367,7 @@ input, select, textarea {
 @keyframes draw3 {
 	0%,
 	50% {
-		stroke-dashoffset: 1600;
+		stroke-dashoffset: 500%;
 	}
 
 	100% {
@@ -469,7 +469,7 @@ input, select, textarea {
 
 		.wrapper .static-txt{
 			color: #1f1815;
-			font-size: 25px;
+			font-size: 22px;
 			font-weight: 400;
 			justify-content: left;
 			padding-left: 10%;
