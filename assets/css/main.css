@@ -291,41 +291,6 @@ input, select, textarea {
 
 		}
 
-/* Signature Animation */
-@keyframes fade-in {
-	0% {
-	  opacity: 0;
-	}
-	100% {
-	  opacity: 1;
-	}
-  }
-
-/* Advanced Signature Animation :) */
-.signature {
-	fill: none;
-	stroke: black;
-	stroke-width: 4;
-}
-
-.signature1-animation {
-	animation-name: draw1;
-	stroke-dasharray: 2500;
-	animation: draw1 5s linear forwards;
-}
-
-.signature2-animation {
-	animation-name: draw2;
-	stroke-dasharray: 100;
-	animation: draw2 5s linear forwards;
-}
-
-.signature3-animation {
-	animation-name: draw3;
-	stroke-dasharray: 1500;
-	animation: draw3 5s linear forwards;
-}
-
 /* Legacy code for loading signature on page load, since replaced by loading signature on page scroll via IntersectionObserver API */
 /* 
 .signature1 {
@@ -367,12 +332,47 @@ input, select, textarea {
 @keyframes draw3 {
 	0%,
 	50% {
-		stroke-dashoffset: 500%;
+		stroke-dashoffset: 1720;
 	}
 
 	100% {
 		stroke-dashoffset: 0;
 	}
+}
+
+/* Signature Animation */
+@keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+
+/* Advanced Signature Animation :) */
+.signature {
+	fill: none;
+	stroke: black;
+	stroke-width: 4;
+}
+
+.signature1-animation {
+	animation-name: draw1;
+	stroke-dasharray: 2500;
+	animation: draw1 5s linear forwards;
+}
+
+.signature2-animation {
+	animation-name: draw2;
+	stroke-dasharray: 100;
+	animation: draw2 5s linear forwards;
+}
+
+.signature3-animation {
+	animation-name: draw3;
+	stroke-dasharray: 1720;
+	animation: draw3 5s linear forwards;
 }
 
 /* Typing Animation */
