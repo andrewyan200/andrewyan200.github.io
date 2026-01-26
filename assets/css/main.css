@@ -414,7 +414,7 @@ input, select, textarea {
 }
 .dynamic-txts li{
   list-style: none;
-  color: #FC6D6D;
+  color: #4939F6;
   font-size: 60px;
   font-weight: 500;
   position: relative;
@@ -438,7 +438,7 @@ input, select, textarea {
   height: 100%;
   width: 100%;
   background: #fff;
-  border-left: 2px solid #FC6D6D;
+  border-left: 2px solid #4939F6;
   animation: typing 3s steps(16) infinite;
 }
 @keyframes typing {
@@ -484,7 +484,7 @@ input, select, textarea {
 		}
 		.dynamic-txts li{
 			list-style: none;
-			color: #FC6D6D;
+			color: #4939F6;
 			font-size: 25px;
 			font-weight: 500;
 			position: relative;
@@ -507,7 +507,7 @@ input, select, textarea {
 			height: 100%;
 			width: 100%;
 			background: #fff;
-			border-left: 2px solid #FC6D6D;
+			border-left: 2px solid #4939F6;
 			animation: typing 3s steps(16) infinite;
 		}
 		@keyframes typing {
